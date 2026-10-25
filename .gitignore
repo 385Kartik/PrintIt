@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.*
+*.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Uploads and User Files
+uploads/
+Backend/uploads/
+
+# Keys and credentials
+*.pem
+*.key
+*.csv
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# MongoDB
+data/
+
+# AWS
+.aws/
+
+# Misc
+*.bak
+*.backup
+reelx-backend
+reference.html

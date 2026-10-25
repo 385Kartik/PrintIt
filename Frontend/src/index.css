@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Base colors - White background with pastel green accent */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #F8F9FA;
+  --text-primary: #000000;
+  --text-secondary: #374151;
+  --accent-green: #80ED99;
+  --accent-green-hover: #6DD687;
+  --accent-green-light: #E8F9ED;
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --grid-square-size: 90px;
+}
+
+/* Box pattern background */
+body {
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(var(--border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+  background-size: var(--grid-square-size) var(--grid-square-size);
+  background-position: -1px -1px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Override grid on mobile */
+@media (max-width: 768px) {
+  :root {
+    --grid-square-size: 60px;
+  }
+}
+
+/* Ensure content stays above the grid */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-green);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green-hover);
+}
